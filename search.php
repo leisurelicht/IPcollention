@@ -11,7 +11,6 @@
 
 <?php
 	echo  "Database connecting..."."<br><br>";
-	echo $_POST["ipAdress"]."<br>";
 	$con = mysql_connect("127.0.0.1","root","root");
 	if (!$con)
 	{
@@ -26,7 +25,6 @@
 	mysql_query("set names 'utf8'");
 	mysql_select_db("ipsearch_db", $con);
     $select = "SELECT * FROM ipaddress WHERE ip='".$ip_address."'";
-    echo $select;
     
     
 	$result = mysql_query($select);
