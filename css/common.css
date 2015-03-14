@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+.middle{
+	width: 980px;
+	margin: 0 auto;
+}
+
+.middle_center{
+ 
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
