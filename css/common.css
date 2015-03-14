@@ -2,12 +2,17 @@
 
 .middle{
 	width: 980px;
+	background-color:#f0ffff;
 	margin: 0 auto;
 }
 
 .middle_center{
- 
+    background-color:#f0ffff;
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
+}
+
+.right{
+	margin-left: 0;
 }

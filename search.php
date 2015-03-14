@@ -10,7 +10,7 @@
 <div class="middle">
     
     <div class="middle_center">
-        <h1>IPCollection</h1>
+        
         <?php
         	echo  "Database connecting..."."<br><br>";
         	$con = mysql_connect("127.0.0.1","root","root");
@@ -32,13 +32,17 @@
         	$result = mysql_query($select);
         	echo var_dump($result);
         	
-        	echo "<table border='1'>
-        	<tr>
-        	<th>IP </th>
-        	<th>Message </th>
-        	<th>RecordTime </th>
-        	<th>UpdateTime </th>
-        	</tr>";
+        	?>
+        	
+        	<?php 
+        	echo "
+            	<table border='1' class='middle_center' >
+            	<tr>
+            	<th>IP </th>
+            	<th>Message </th>
+            	<th>RecordTime </th>
+            	<th>UpdateTime </th>
+            	</tr>";
         	
         	while($row = mysql_fetch_array($result))
         	  {
@@ -49,10 +53,10 @@
         	  echo "<td>" . $row['updatetime'] . "</td>";
         	  echo "</tr>";
         	  }
-        	  
         	echo "</table>";
         	mysql_close($con);
-        ?>
+            ?>
+ 
    
         <?php
             echo "今天是 " . date("Y.m.d") . " " . date("l")."<br>";
