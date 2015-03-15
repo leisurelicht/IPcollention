@@ -14,5 +14,11 @@
 }
 
 .right {
-	margin-left: 85%;
+	margin-left: 74%;
+}
+
+.middle_center tr th{
+	border:thin 1px;
+	width:20%;
+	background-color: #f0ffff;
 }
