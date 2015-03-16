@@ -50,12 +50,22 @@
     
     function del_ip_message($ip_address)
     {
-        $localtime_assoc = localtime(time(), true);
         $con = connet_mysql();
         mysql_query("set names 'utf8'");
         mysql_select_db("ipsearch_db", $con);
         $delect = "DELETE FROM ipaddress WHERE ip='$ip_address'";
         $result = mysql_query($delect);
+        return $result;
+        mysql_close($con);
+    }
+    
+    function get_ip_count()
+    {
+        $con = connet_mysql();
+        mysql_query("set names 'utf8'");
+        mysql_select_db("ipsearch_db", $con);
+        $count = "SELECT COUNT(*) FROM ipaddress";
+        $result = mysql_query($count);
         return $result;
         mysql_close($con);
     }

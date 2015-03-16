@@ -7,6 +7,8 @@
 
 <body>
 	<div class="middle">
+	
+    
     <?php
     require ('get_util.php');
     
@@ -34,7 +36,6 @@
     
     echo "</table>";
     mysql_close($con);
-    ?>
  
 <div class="right">
     <?php
