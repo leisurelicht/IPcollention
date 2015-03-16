@@ -36,6 +36,7 @@
     
     echo "</table>";
     mysql_close($con);
+    ?>
  
 <div class="right">
     <?php

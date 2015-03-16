@@ -9,6 +9,12 @@
 		
 		<div class="middle_center">
 			<form action="show.php" method="post">
+				 <input type="submit" value="查询所有IP">
+			</form>
+		</div>
+		
+		<div class="middle_center">
+			<form action="show.php" method="post">
 				IP: <input type="text" name="ipAddress">
 				 <input type="submit" value="查询">
 			</form>
