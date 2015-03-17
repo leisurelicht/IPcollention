@@ -16,7 +16,8 @@
     
     $result = get_ip_message($ip_address);
     
-    echo "
+    if ($row = mysql_fetch_array($result)) {
+        echo "
              <table border='1' class='middle_center' > 
              <tr >
                 <th>IP </th>
@@ -24,17 +25,40 @@
                 <th>RecordTime </th>
                 <th>UpdateTime </th>
              </tr>";
-    
-    while ($row = mysql_fetch_array($result)) {
+        
         echo "<tr>";
         echo "<td>" . $row['ip'] . "</td>";
         echo "<td>" . $row['message'] . "</td>";
         echo "<td>" . $row['recordtime'] . "</td>";
         echo "<td>" . $row['updatetime'] . "</td>";
         echo "</tr>";
+        echo "</table>";
+        
+        echo "<div class='middle_center'>
+            更新IP信息
+            </div>";
+        echo "
+        <div class='middle_center'>
+        <form action='update_result.php' method='post'>
+            IP: <input type='text' name='upipAddress' vlaue='$ip_address'>
+            IP信息: <input type='text' name='upipMessage'>
+            <input type='submit' value='更新'>
+        </form>
+        </div>";
+    } else {
+        echo "<div class='middle_center'>
+            不存在关于IP:" . $ip_address . "的信息。<br>
+            插入新IP
+            </div>";
+        echo "
+            <div class='middle_center'>
+			<form action='insert_result.php' method='post'>
+				IP: <input type='text' name='inipAddress' vlaue='$ip_address'> 
+				IP信息: <input type='text' name='inipMessage'> 
+				<input type='submit' value='插入'>
+			</form>
+	        </div>";
     }
-    
-    echo "</table>";
     mysql_close($con);
     ?>
  

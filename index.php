@@ -8,8 +8,8 @@
 		<h1 align="center">IPCollection</h1>
 		
 		<div class="middle_center">
-			<form action="show.php" method="post">
-				 <input type="submit" value="查询所有IP">
+			<form action="show_all.php" >
+				 <input type="submit" value="显示所有IP">
 			</form>
 		</div>
 		
