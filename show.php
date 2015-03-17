@@ -40,7 +40,7 @@
         echo "
         <div class='middle_center'>
         <form action='update_result.php' method='post'>
-            IP: <input type='text' name='upipAddress' vlaue='$ip_address'>
+            IP: <input type='text' name='upipAddress' value='$ip_address'><br>
             IP信息: <input type='text' name='upipMessage'>
             <input type='submit' value='更新'>
         </form>
@@ -53,7 +53,7 @@
         echo "
             <div class='middle_center'>
 			<form action='insert_result.php' method='post'>
-				IP: <input type='text' name='inipAddress' vlaue='$ip_address'> 
+				IP: <input type='text' name='inipAddress' value='$ip_address'> 
 				IP信息: <input type='text' name='inipMessage'> 
 				<input type='submit' value='插入'>
 			</form>
