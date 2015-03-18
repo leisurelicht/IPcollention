@@ -8,14 +8,16 @@
 <body>
 	<div class="middle">
     <?php
-    require ('get_util.php');
+    require ('mysql_handle.php');
     
     $ip_address = $_POST["delipAddress"];
-   
-
-    $result = del_ip_message($ip_address);
     
-    $result = get_ip_message($ip_address);
+    //连接数据库查询对操作数据
+    $sql = new mysql_handles();
+    $result = $sql->del_ip_message($ip_address);
+    $result = $sql->get_ip_message($ip_address);
+    unset($sql);
+    //连接数据库查询对操作数据
     
     $url = "show.php";
     if (isset($url)) {

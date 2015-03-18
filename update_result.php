@@ -8,14 +8,16 @@
 <body>
 	<div class="middle">
     <?php
-    require ('get_util.php');
+    require ('mysql_handle.php');
     
     $ip_address = $_POST["upipAddress"];
     $ip_message = $_POST["upipMessage"];
-
-    $result = update_ip_message($ip_address,$ip_message);
     
-    $result = get_ip_message($ip_address);
+    //连接数据库查询对操作数据
+    $sql = new mysql_handles();
+    $result = $sql->update_ip_message($ip_address,$ip_message);
+    unset($sql);
+    //连接数据库查询对操作数据
     
     $url = "show.php";
     if (isset($url)) {

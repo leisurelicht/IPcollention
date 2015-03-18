@@ -9,7 +9,7 @@
 <div class="middle">
 
 <?php
-require ('get_util.php');
+require ('mysql_handle.php');
 
 $result = get_all_ip();
 

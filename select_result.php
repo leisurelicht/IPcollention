@@ -9,15 +9,11 @@
 	<div class="middle">
 	
     <?php
-    require ('mysql_handle.php');
-    $ip_address = $_POST["inipAddress"];
-    $ip_message = $_POST["inipMessage"];
-    
-    //连接数据库查询对操作数据
-    $sql = new mysql_handles();
-    $result = $sql ->insert_ip_message($ip_address, $ip_message);
-    unset($sql);
-    //连接数据库查询对操作数据
+    #require ('mysql_handle.php');
+    require ('string_handle.php');
+    $ip_address = $_POST["ipAddress"];
+    $str = new string_handles();
+    $ip_address=$str->string_blurred($ip_address);
     
     $url = "show.php";
     if (isset($url)) {
