@@ -10,7 +10,6 @@
 	
     
     <?php
-<<<<<<< HEAD
     require ('mysql_handle.php');
     
     //连接数据库查询对操作数据
@@ -18,12 +17,6 @@
     $result = $sql->get_all_ip();
     unset($sql);
     //连接数据库查询对操作数据
-=======
-    require ('get_util.php');
-    
-    
-    $result = get_all_ip();
->>>>>>> origin/master
     
     echo "
              <table border='1' class='middle_center' > 
@@ -46,7 +39,6 @@
     echo "</table>";
     mysql_close($con);
     ?>
-<<<<<<< HEAD
     
 <div class="right">
     <br><br>
@@ -54,8 +46,6 @@
     <br><br>
     </a>
 </div>
-=======
->>>>>>> origin/master
  
 <div class="right">
     <?php

@@ -19,7 +19,6 @@ function changetext(id)
     require ('mysql_handle.php');
     
     $ip_address = $_REQUEST['ipAddress'];
-<<<<<<< HEAD
     if($ip_address=='NULL')
     {
         echo"<div class='middle_center'><h2 onclick='changetext(this)' >无法查询一个空IP<br>请点击我输入要查询的IP</h2></div>";
@@ -32,13 +31,6 @@ function changetext(id)
         
         if ($row = mysql_fetch_array($result)) {
             echo "
-=======
-    
-    $result = get_ip_message($ip_address);
-    
-    if ($row = mysql_fetch_array($result)) {
-        echo "
->>>>>>> origin/master
              <table border='1' class='middle_center' > 
              <tr >
                 <th>IP </th>
@@ -46,7 +38,6 @@ function changetext(id)
                 <th>RecordTime </th>
                 <th>UpdateTime </th>
              </tr>";
-<<<<<<< HEAD
             
             echo "<tr>";
             echo "<td>" . $row['ip'] . "</td>";
@@ -63,29 +54,10 @@ function changetext(id)
         <div class='middle_center'>
         <form action='update_result.php' method='post'>
             IP: <input type='text' name='upipAddress' >
-=======
-        
-        echo "<tr>";
-        echo "<td>" . $row['ip'] . "</td>";
-        echo "<td>" . $row['message'] . "</td>";
-        echo "<td>" . $row['recordtime'] . "</td>";
-        echo "<td>" . $row['updatetime'] . "</td>";
-        echo "</tr>";
-        echo "</table>";
-        
-        echo "<div class='middle_center'>
-            更新IP信息
-            </div>";
-        echo "
-        <div class='middle_center'>
-        <form action='update_result.php' method='post'>
-            IP: <input type='text' name='upipAddress' value='$ip_address'><br>
->>>>>>> origin/master
             IP信息: <input type='text' name='upipMessage'>
             <input type='submit' value='更新'>
         </form>
         </div>";
-<<<<<<< HEAD
         } else {
             echo "<div class='middle_center'>
             不存在关于IP:" . $ip_address . "的信息。<br>
@@ -95,22 +67,10 @@ function changetext(id)
             <div class='middle_center'>
 			<form action='insert_result.php' method='post'>
 				IP: <input type='text' name='inipAddress'> 
-=======
-    } else {
-        echo "<div class='middle_center'>
-            不存在关于IP:" . $ip_address . "的信息。<br>
-            插入新IP
-            </div>";
-        echo "
-            <div class='middle_center'>
-			<form action='insert_result.php' method='post'>
-				IP: <input type='text' name='inipAddress' value='$ip_address'> 
->>>>>>> origin/master
 				IP信息: <input type='text' name='inipMessage'> 
 				<input type='submit' value='插入'>
 			</form>
 	        </div>";
-<<<<<<< HEAD
         }
         echo"
             <div class='right'>
@@ -118,10 +78,6 @@ function changetext(id)
 			</a>
 		    </div>";
     }
-=======
-    }
-    mysql_close($con);
->>>>>>> origin/master
     ?>
 
         
