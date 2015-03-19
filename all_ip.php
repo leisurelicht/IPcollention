@@ -11,13 +11,6 @@
 <?php
 require ('mysql_handle.php');
 
-$result = get_all_ip();
-
-
-$url = "show.php";
-if (isset($url)) {
-    Header("Location: $url?ipAddress=$ip_address");
-}
 ?>
 </div>
 </body>
