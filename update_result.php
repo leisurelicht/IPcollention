@@ -12,7 +12,10 @@
     
     $ip_address = $_POST["upipAddress"];
     $ip_message = $_POST["upipMessage"];
-    
+    if($ip_address=='')
+    {
+        echo"<div class='middle_center'><h2 onclick='changetext(this)' >无法更新一个空IP<br>请点击我返回主页</h2></div>";
+    }else {
     //连接数据库查询对操作数据
     $sql = new mysql_handles();
     $result = $sql->update_ip_message($ip_address,$ip_message);
@@ -24,7 +27,7 @@
         Header("Location: $url?ipAddress=$ip_address");
     }
     
-    mysql_close($con);
+    }
     ?>
  
 	</div>

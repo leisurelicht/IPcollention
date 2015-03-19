@@ -24,7 +24,6 @@
         Header("Location: $url?ipAddress=$ip_address");
     }
     
-    mysql_close($con);
     ?>
  
 
