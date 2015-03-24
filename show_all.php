@@ -11,7 +11,9 @@
     
     <?php
     require ('mysql_handle.php');
-    
+    $fp=fopen("/tmp/log.txt",'w');
+    fwrite($fp,'hello');
+    fclose($fp);
     //连接数据库查询对操作数据
     $sql = new mysql_handles();
     $result = $sql->get_all_ip();
@@ -37,7 +39,30 @@
     }
     
     echo "</table>";
-    mysql_close($con);
+    
+    echo "<br><br>";
+    
+    echo "<div class='middle_center'>
+                    更新IP信息
+                    </div>";
+    echo "
+                <div class='middle_center'>
+                <form action='update_result.php' method='post'>
+                    IP: <input type='text' name='upipAddress' >
+                    IP信息: <input type='text' name='upipMessage'>
+                    <input type='submit' value='更新'>
+                </form>
+                </div>";
+    echo "<br><br>";
+    echo "<div class='middle_center'>
+                    删除IP信息
+                    </div>";
+    echo "<div class='middle_center'>
+    			<form action='delect_result.php' method='post'>
+    				IP: <input type='text' name='delipAddress'>
+                        <input type='submit' value='删除'>
+    			</form>
+		      </div>";
     ?>
     
 <div class="right">
@@ -49,9 +74,9 @@
  
 <div class="right">
     <?php
-    echo "现在是 " . date("Y.m.d") . " " . date("l") . ' ';
-    $localtime_assoc = localtime(time(), true);
-    echo $localtime_assoc[tm_hour] . ":" . $localtime_assoc[tm_min] . ":" . $localtime_assoc[tm_sec];
+    echo "现在是 " . date("Y.m.d") . " " . date("l").' '.date("h:i:sa");
+    #$localtime_assoc = localtime(time(), true);
+    #echo $localtime_assoc[tm_hour] . ":" . $localtime_assoc[tm_min] . ":" . $localtime_assoc[tm_sec];
     ?>
 </div>
 	</div>

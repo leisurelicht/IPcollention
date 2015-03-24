@@ -12,7 +12,7 @@
 <body>
 	<div class="middle">
 		<h1 align="center">IPCollection</h1>
-		<h1 align="center">修正中……</h1>
+		<h1 align="center">祈祷结束</h1>
 
 		<div class="middle_center">
 			<form action="show_all.php">
@@ -29,26 +29,26 @@
 
 		<div class="middle_center">
 			<form action="insert_result.php" method="post">
-				IP: <input type="text" name="inipAddress"> 
-				IP信息: <input type="text" name="inipMessage"> 
+				IP: <input type="text" name="inipAddress" value='192.168.1.*'> 
+				IP信息: <input type="text" name="inipMessage" value='test'> 
 					<input type="submit" value="插入">
 			</form>
 		</div>
 
-		<div class="middle_center">
+		<!--<div class="middle_center">
 			<form action="update_result.php" method="post">
 				IP: <input type="text" name="upipAddress"> 
 				IP信息:<input type="text" name="upipMessage"> 
 				<input type="submit" value="更新">
 			</form>
-		</div>
+		</div>s
 
 		<div class="middle_center">
 			<form action="delect_result.php" method="post">
 				IP: <input type="text" name="delipAddress"> <input type="submit"
 					value="删除">
 			</form>
-		</div>
+		</div>-->
 			
 		
              
@@ -67,9 +67,9 @@
 
 		<div class="right">
             <?php
-            echo "现在是 " . date("Y.m.d") . " " . date("l").' ';
-            $localtime_assoc = localtime(time(), true);
-            echo $localtime_assoc[tm_hour].":".$localtime_assoc[tm_min].":".$localtime_assoc[tm_sec];
+            echo "现在是 " . date("Y.m.d") . " " . date("l").' '.date("h:i:sa");
+            #$localtime_assoc = localtime(time(), true);
+            #echo $localtime_assoc[tm_hour].":".$localtime_assoc[tm_min].":".$localtime_assoc[tm_sec];
             ?>
         </div>
         
@@ -86,15 +86,18 @@
         </div>
         
         <div class="middle_center">
-            <h5>3.18 更新：</h5>  
+            <h4>3.18 更新：</h4>  
             <p>增加模糊搜索</p>
-        </div>
-		
-		
-		<div class="middle_center">
             <p>模糊搜索的方法：</p>
-            <p>例1：192.168</p>
-            <p>例2：192.168.*.1</p>
+            <p>例1：192.168//后面可以省略</p>
+            <p>例2：192.168.*.1//模糊部分可用*号代替</p>
+            <br>
+            <h4>3.24 更新：</h4>
+            <p>增加IP段插入</p>
+            <p>使用示例：</p>
+            <p>例1：192.168.1.*//将最后一位用*代替即可</p>
+            <p>插入过程中遇到已存在的IP不会更新原IP信息</p>
+            <p>谨慎使用</p>
         </div>
         
     </div>

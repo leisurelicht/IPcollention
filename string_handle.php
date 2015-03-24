@@ -2,7 +2,20 @@
 
 class string_handles
 {
-
+    public function string_judge($str)
+    {
+        $res = array();
+        $result = explode('.', $str);
+        if($result[3] == '*'){
+            array_splice($result,3,1);
+            $res[0]=true;
+            $res[1]=implode('.',$result);
+            return $res;
+        }else{
+            $res[0]=false;
+            return $res;
+        }
+    }
     public function string_blurred($str)
     {
         $result = explode('.', $str);
@@ -13,7 +26,8 @@ class string_handles
                     $result[$key] = '%';
                 }
             }
-            $ip_address = $result[0] . '.' . $result[1] . '.' . $result[2] . '.' . $result[3];
+            $ip_address = implode('.',$result);
+            #$ip_address = $result[0] . '.' . $result[1] . '.' . $result[2] . '.' . $result[3];
         } elseif ($count > 0 and $count < 4) {
             foreach ($result as $key => $element) {
                 if ($element == '*') {
