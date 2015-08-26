@@ -41,7 +41,19 @@
     echo "</table>";
     
     echo "<br><br>";
+    echo "<div class='middle_center'>
+                    插入IP信息
+                    </div>";
+    echo "
+                <div class='middle_center'>
+                <form action='insert_result.php' method='post'>
+                    IP: <input type='text' name='inipAddress' >
+                    IP信息: <input type='text' name='inipMessage'>
+                    <input type='submit' value='插入'>
+                </form>
+                </div>";
     
+    echo "<br><br>"; 
     echo "<div class='middle_center'>
                     更新IP信息
                     </div>";
@@ -53,6 +65,7 @@
                     <input type='submit' value='更新'>
                 </form>
                 </div>";
+    
     echo "<br><br>";
     echo "<div class='middle_center'>
                     删除IP信息

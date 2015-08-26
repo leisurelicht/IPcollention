@@ -22,17 +22,23 @@ function changetext(id)
     if ($ip_address == '') {
         echo "<div class='middle_center'><h2 onclick='changetext(this)' >无法插入一个空IP<br>请点击我输入要查询的IP</h2></div>";
     } else {
+        
         $str = new string_handles();
         $flag=$str->string_judge($ip_address);
-        print_r($flag);
+        #print_r($flag);
         // 连接数据库查询对操作数据
         $sql = new mysql_handles();
-        if($flag[0]==true){
+        if ($flag[0]==2){
+            echo "<div class='middle_center'><h2 onclick='changetext(this)' >插入格式必须为xxx.xxx.xxx.*或xxx.xxx.xxx.xxx<br>点击返回主页面</h2></div>";
+        }
+        else{
+            if($flag[0]==1){
             $result = $sql->insert_ip_segment_message($flag[1], $ip_message);
             $ip_address=$str->string_blurred($flag[1]);
-        }elseif($flag[0]==false){
+        }elseif($flag[0]==0){
             $result = $sql->insert_ip_message($ip_address, $ip_message);
         }
+
         
         unset($str);
         unset($sql);
@@ -41,6 +47,7 @@ function changetext(id)
         $url = "show.php";
         if (isset($url)) {
             Header("Location: $url?ipAddress=$ip_address");
+        }
         }
     }
     ?>

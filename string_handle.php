@@ -2,18 +2,28 @@
 
 class string_handles
 {
-    public function string_judge($str)
+    public function string_judge($str) //删除192.168.1.*最后的*
     {
         $res = array();
         $result = explode('.', $str);
+        if (count($result)<=3)
+        {
+            $res[0]=2;
+            $res[1]=0;
+            return $res; #如果个数小于三
+        }
+        else
+        {
         if($result[3] == '*'){
             array_splice($result,3,1);
-            $res[0]=true;
+            $res[0]=1;
             $res[1]=implode('.',$result);
             return $res;
         }else{
-            $res[0]=false;
+            $res[0]=0;
+            $res[1]=0;
             return $res;
+        }
         }
     }
     public function string_blurred($str)

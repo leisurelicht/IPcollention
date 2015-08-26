@@ -29,8 +29,8 @@
 
 		<div class="middle_center">
 			<form action="insert_result.php" method="post">
-				IP: <input type="text" name="inipAddress" value='192.168.1.*'> 
-				IP信息: <input type="text" name="inipMessage" value='test'> 
+				IP: <input type="text" name="inipAddress" > 
+				IP信息: <input type="text" name="inipMessage" > 
 					<input type="submit" value="插入">
 			</form>
 		</div>
